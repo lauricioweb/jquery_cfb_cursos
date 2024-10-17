@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      div {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="bloco">
+      <p id="texto">
+        lauricio developer <br /><br />
+        <span>curso de jquery</span>
+      </p>
+    </div>
+  </body>
+  <script>
+    // é possivel pegar  apenas o pai direto de um elemento filho usando a função parent()
+    // $("span").parent().css({ border: "solid red" }); // essa formatação sera aplicada ao elemento pai do span
+    // $("p").parent().css({ border: "solid green" });
+    //  $("div").parent().css({ border: "solid  blue" });
+
+    // usando parent() posso aplicar uma formatação a todos os elementos pai de elemento
+    // $("span").parents().css({ border: "solid red" }); a borda vermelha sera aplicada a todos os elementos acima de span
+
+    // pode ser limitada até onde deve ser propagado essa formatação usando parentsUntil("elemento até onde sera propagado");
+    $("span").parentsUntil("body").css({ border: "solid red" }); //nesse caso a borda vermela sera propagada até o elemento body ;
+  </script>
+</html>
